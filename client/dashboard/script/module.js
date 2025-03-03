@@ -57,3 +57,12 @@ export function autocomplete(input, map){
         input.target.value = characters.slice(0, -1);
     }
 }
+
+export function Toast(message){
+    const toastEl = document.getElementById('toast')
+    const toast_body = toastEl.querySelector(".toast-body");
+    toast_body.innerText = message;
+    
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastEl)
+    toastBootstrap.show()
+}

@@ -1,16 +1,6 @@
-import { submit } from "./module.js";
+import { submit, Toast } from "./module.js";
 const form = document.getElementById("passport_form");
-
-
-
 document.getElementById("submit_btn").addEventListener("click",()=>{
-    function toast(){
-        const toastLiveExample = document.getElementById('liveToast')
-    
-        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-        toastBootstrap.show()
-    }
-
     const Data = {
         passport_type: form.querySelector("#passport_type").value ? form.querySelector("#passport_type").value : null,
         country_code: form.querySelector("#country_code").dataset.value ? form.querySelector("#country_code").dataset.value : null, //dataset
@@ -54,13 +44,14 @@ document.getElementById("submit_btn").addEventListener("click",()=>{
             console.log(e);
         })
         
-        toast();
+        Toast("The data has been saved successfully.");
     }
     else
     {
-        console.log("Empty Fields!");
-        toast();
+        Toast("Please fill all the required fields!");
     }
+    
+
     console.log(Data);
 })
 

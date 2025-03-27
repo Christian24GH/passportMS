@@ -1,3 +1,5 @@
-./node_modules
-
+diagrams
 node_modules
+about.txt
+bs-config.js
+server/documents/*

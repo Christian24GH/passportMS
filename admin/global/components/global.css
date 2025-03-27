@@ -1,0 +1,39 @@
+#left_nav .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+#left_nav .list-group a{
+    text-decoration:none;
+}
+.list-group-item{
+    cursor:pointer;
+}
+.hoverable .list-group-item:hover{
+    background-color: var(--bs-primary);
+    color: white;
+}
+#left_nav .accordion-button{
+    font-weight: 500;
+}
+#left_nav .accordion-button::after {
+    background-image: none !important;
+    width: 0;
+    display: none;
+}
+
+#left_nav{
+    display: none;
+    z-index: 1000;
+    max-width: 20vw;
+    width:20vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -20vw;
+    bottom: 0;
+    background-color: white;
+    overflow-y: auto;
+}
+#main{
+    margin-left: 0;
+}

@@ -2,7 +2,7 @@
     $sql = "SELECT * FROM getpassportlist WHERE status = 'waiting'";
     $result = $conn->query($sql);
 
-    if($result->num_rows > 0){
+    if($result !== false && $result->num_rows > 0){
         $div = "";
         $status = "";
         while($row = $result->fetch_assoc()){

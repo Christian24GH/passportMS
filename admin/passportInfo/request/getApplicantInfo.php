@@ -6,7 +6,7 @@
         $sql = "SELECT * FROM getapplicants";
         $result = $conn->query($sql);
         
-        if($result->num_rows > 0){
+        if($result !== false && $result->num_rows > 0){
             $data = [];
             while($row = $result->fetch_assoc()){
                 $data[] = [

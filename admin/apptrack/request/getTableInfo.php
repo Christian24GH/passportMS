@@ -2,11 +2,11 @@
     function getApplicantInfo(){
         $local_url = $_SERVER["DOCUMENT_ROOT"]."/TourAndTravel/PPVS";
         include "$local_url/admin/connection.php";
-
+        
         $sql = "SELECT * FROM getpassportInfo";
         $result = $conn->query($sql);
-        
-        if($result->num_rows > 0){
+
+        if($result !== false && $result->num_rows > 0){
             $tr = "";
             $mn = "";
             $status = "";
@@ -34,7 +34,7 @@
             }
             echo $tr;
         }else{
-            echo "No Table Record";
+            echo "<tr><td colspan='6' class='text-center'>No Table Record</td></tr>";
         }
     }
     getApplicantInfo();

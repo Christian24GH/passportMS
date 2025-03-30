@@ -3,7 +3,7 @@
         <div class="menu-header d-flex justify-content-between w-100 py-2">
             <h2>BRAND</h2>
             <div class="ratio ratio-1x1 me-2 " style="width:3rem;" >
-                <img id="closeBtn" src="<?php echo $server_url?>/client/global/icons/burger-menu.svg" class="h-100" alt="">
+                <img id="closeBtn" src="<?php echo $server_url?>/admin/global/icons/burger-menu.svg" class="h-100" alt="">
             </div>
         </div>
         <div class="w-100 border-top pt-4 px-2">

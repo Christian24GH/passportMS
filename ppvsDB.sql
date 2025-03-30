@@ -1,6 +1,6 @@
 /*
 SQLyog Community v13.2.1 (64 bit)
-MySQL - 10.4.28-MariaDB : Database - ppvs
+MySQL - 10.4.32-MariaDB : Database - ppvs
 *********************************************************************
 */
 
@@ -24,9 +24,13 @@ CREATE TABLE `address` (
   `addressId` int(11) NOT NULL AUTO_INCREMENT,
   `address` varchar(255) NOT NULL,
   PRIMARY KEY (`addressId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `address` */
+
+insert  into `address`(`addressId`,`address`) values 
+(1,'asdasd'),
+(2,'sadas');
 
 /*Table structure for table `applicant` */
 
@@ -45,9 +49,13 @@ CREATE TABLE `applicant` (
   PRIMARY KEY (`applicantID`),
   KEY `nID` (`nID`),
   CONSTRAINT `applicant_ibfk_1` FOREIGN KEY (`nID`) REFERENCES `nationality` (`nID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `applicant` */
+
+insert  into `applicant`(`applicantID`,`firstName`,`middleName`,`lastName`,`dateOfBirth`,`gender`,`nID`,`contactID`,`addressID`) values 
+(1,'asdasd','asdasd','asdasd','2025-03-30','Male',1,1,1),
+(2,'asdsadsad','asdsdas','sasdasd','2025-03-30','Male',1,2,2);
 
 /*Table structure for table `application` */
 
@@ -61,9 +69,13 @@ CREATE TABLE `application` (
   PRIMARY KEY (`applicationID`),
   KEY `applicantID` (`applicantID`),
   CONSTRAINT `application_ibfk_1` FOREIGN KEY (`applicantID`) REFERENCES `applicant` (`applicantID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `application` */
+
+insert  into `application`(`applicationID`,`applicantID`,`submittion_date`,`status`) values 
+(1,1,'2025-03-30 15:58:53','rejected'),
+(2,2,'2025-03-30 15:59:28','approved');
 
 /*Table structure for table `applicationdocuments` */
 
@@ -81,6 +93,10 @@ CREATE TABLE `applicationdocuments` (
 
 /*Data for the table `applicationdocuments` */
 
+insert  into `applicationdocuments`(`applicationID`,`passportID`,`documentID`) values 
+(1,1,1),
+(2,2,2);
+
 /*Table structure for table `contact` */
 
 DROP TABLE IF EXISTS `contact`;
@@ -90,9 +106,13 @@ CREATE TABLE `contact` (
   `contact` varchar(255) NOT NULL,
   `type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`contactId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `contact` */
+
+insert  into `contact`(`contactId`,`contact`,`type`) values 
+(1,'sad',NULL),
+(2,'asd',NULL);
 
 /*Table structure for table `documents` */
 
@@ -104,9 +124,13 @@ CREATE TABLE `documents` (
   `documentServerPath` varchar(255) NOT NULL,
   `uploadDate` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`documentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `documents` */
+
+insert  into `documents`(`documentID`,`documentName`,`documentServerPath`,`uploadDate`) values 
+(1,'1743321533_043.jpg','C:/xampp/htdocs/TourAndTravel/PPVS/server/documents/1743321533_043.jpg','2025-03-30 15:58:53'),
+(2,'1743321568_044.jpg','C:/xampp/htdocs/TourAndTravel/PPVS/server/documents/1743321568_044.jpg','2025-03-30 15:59:28');
 
 /*Table structure for table `email` */
 
@@ -119,9 +143,13 @@ CREATE TABLE `email` (
   PRIMARY KEY (`emailID`),
   KEY `applicantID` (`applicantID`),
   CONSTRAINT `email_ibfk_1` FOREIGN KEY (`applicantID`) REFERENCES `applicant` (`applicantID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `email` */
+
+insert  into `email`(`emailID`,`email`,`applicantID`) values 
+(1,'asdasd',1),
+(2,'asd',2);
 
 /*Table structure for table `issuing_country` */
 
@@ -557,9 +585,13 @@ CREATE TABLE `passportdetails` (
   PRIMARY KEY (`passportID`),
   KEY `countryID` (`countryID`),
   CONSTRAINT `passportdetails_ibfk_2` FOREIGN KEY (`countryID`) REFERENCES `issuing_country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `passportdetails` */
+
+insert  into `passportdetails`(`passportID`,`passportNumber`,`passportType`,`countryID`,`dateOfIssue`,`dateOfExpiry`) values 
+(1,'asdasd','P',1,'2025-03-30','2025-03-30'),
+(2,'asdasd','P',1,'2025-03-30','2025-03-30');
 
 /*Table structure for table `rejections` */
 
@@ -572,9 +604,12 @@ CREATE TABLE `rejections` (
   PRIMARY KEY (`rejectionID`),
   KEY `applicationID` (`applicationID`),
   CONSTRAINT `rejections_ibfk_1` FOREIGN KEY (`applicationID`) REFERENCES `application` (`applicationID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `rejections` */
+
+insert  into `rejections`(`rejectionID`,`applicationID`,`description`) values 
+(1,1,'asdasdsd');
 
 /* Procedure structure for procedure `insertApplication` */
 
@@ -582,7 +617,7 @@ CREATE TABLE `rejections` (
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`christian`@`localhost` PROCEDURE `insertApplication`(
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertApplication`(
 	IN p_firstName VARCHAR(50),
 	IN p_middleName VARCHAR(50),
 	IN p_lastName VARCHAR(50),
@@ -590,56 +625,66 @@ DELIMITER $$
 	IN p_gender ENUM("Male","Female", "Others"),
 	IN p_nationalityID INT,
 	IN p_address VARCHAR(255),
-	IN p_email varchar(255),
+	IN p_email VARCHAR(255),
 	IN p_contact VARCHAR(11),
-	IN p_documentName varchar(255),
-	IN p_documentServerPath varchar(255),
-	IN p_passportNumber Varchar(20),
-	IN p_passportType Char(1),
+	IN p_documentName VARCHAR(255),
+	IN p_documentServerPath VARCHAR(255),
+	IN p_passportNumber VARCHAR(20),
+	IN p_passportType CHAR(1),
 	IN p_issuingCountryID INT,
-	IN p_dateOfIssue Date,
+	IN p_dateOfIssue DATE,
 	IN p_dateOfExpiry DATE	
 )
 BEGIN
-	declare new_addressId INT;
+	DECLARE new_addressId INT;
 	DECLARE new_contactId INT;
 	DECLARE new_emailId INT;
 	DECLARE new_applicantId INT;
 	DECLARE new_applicationId INT;
 	DECLARE new_documentId INT;
 	DECLARE new_passportId INT;
+
+	-- START TRANSACTION
+	START TRANSACTION;
+
+	-- Insert into address
+	INSERT INTO address(address) VALUES (p_address);
+	SET new_addressId = LAST_INSERT_ID();
 	
-	DECLARE EXIT HANDLER FOR SQLEXCEPTION
-	begin
-		rollback;
-	END;
-	start transaction;
-		INSERT INTO address(address) VALUES (p_address);
-		SET new_addressId = LAST_INSERT_ID();
-		
-		INSERT INTO contact(contact) VALUES (p_contact);
-		SET new_contactId = LAST_INSERT_ID();
-		
-		INSERT INTO applicant(firstName, middleName, lastName, dateOfBirth, gender, nID, contactID, addressID) 
-		VALUES (p_firstName, p_middleName, p_lastName, p_dateOfBirth, p_gender, p_nationalityID, new_contactId, new_addressId);
-		SET new_applicantId = LAST_INSERT_ID();
-		
-		INSERT INTO email(email, applicantID) VALUES (p_email, new_applicantId);
-		SET new_emailId = LAST_INSERT_ID();
-		
-		INSERT INTO application(applicantID, submittion_date,status) VALUES (new_applicantId, NOW(),"waiting");
-		SET new_applicationId = LAST_INSERT_ID();
-		
-		INSERT INTO documents(documentName, documentServerPath) VALUES (p_documentName, p_documentServerPath);
-		SET new_documentId = LAST_INSERT_ID();
-		
-		INSERT INTO passportdetails(passportNumber, passportType, countryID, dateOfIssue, dateOfExpiry) 
-		VALUES (p_passportNumber, p_passportType, p_issuingCountryID, p_dateOfIssue, p_dateOfExpiry);
-		SET new_passportID = LAST_INSERT_ID();
-		
-		Insert into applicationdocuments(applicationID, passportID, documentID)
-		VALUES (new_applicationID, new_passportId, new_documentId);
-	commit;
+	-- Insert into contact
+	INSERT INTO contact(contact) VALUES (p_contact);
+	SET new_contactId = LAST_INSERT_ID();
+	
+	-- Insert into applicant
+	INSERT INTO applicant(firstName, middleName, lastName, dateOfBirth, gender, nID, contactID, addressID) 
+	VALUES (p_firstName, p_middleName, p_lastName, p_dateOfBirth, p_gender, p_nationalityID, new_contactId, new_addressId);
+	SET new_applicantId = LAST_INSERT_ID();
+	
+	-- Insert into email
+	INSERT INTO email(email, applicantID) VALUES (p_email, new_applicantId);
+	SET new_emailId = LAST_INSERT_ID();
+	
+	-- Insert into application
+	INSERT INTO application(applicantID, submittion_date, `STATUS`) 
+	VALUES (new_applicantId, NOW(), "waiting");
+	SET new_applicationId = LAST_INSERT_ID();
+	
+	-- Insert into documents
+	INSERT INTO documents(documentName, documentServerPath) 
+	VALUES (p_documentName, p_documentServerPath);
+	SET new_documentId = LAST_INSERT_ID();
+	
+	-- Insert into passportdetails
+	INSERT INTO passportdetails(passportNumber, passportType, countryID, dateOfIssue, dateOfExpiry) 
+	VALUES (p_passportNumber, p_passportType, p_issuingCountryID, p_dateOfIssue, p_dateOfExpiry);
+	SET new_passportId = LAST_INSERT_ID();
+	
+	-- Insert into applicationdocuments
+	INSERT INTO applicationdocuments(applicationID, passportID, documentID)
+	VALUES (new_applicationId, new_passportId, new_documentId);
+
+	-- COMMIT TRANSACTION
+	COMMIT;
 
 END */$$
 DELIMITER ;
@@ -650,7 +695,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`christian`@`localhost` PROCEDURE `resetDB`()
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `resetDB`()
 BEGIN
 	SET FOREIGN_KEY_CHECKS = 0;
 	
@@ -722,21 +767,21 @@ DROP TABLE IF EXISTS `getpassportlist`;
 /*!50001 DROP TABLE IF EXISTS `getcustomerdocuments` */;
 /*!50001 DROP VIEW IF EXISTS `getcustomerdocuments` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`christian`@`localhost` SQL SECURITY DEFINER VIEW `getcustomerdocuments` AS select `ad`.`applicationID` AS `applicationID`,`d`.`documentID` AS `documentID`,`d`.`documentName` AS `documentName`,`d`.`documentServerPath` AS `documentServerPath` from (`documents` `d` join `applicationdocuments` `ad` on(`d`.`documentID` = `ad`.`documentID`)) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `getcustomerdocuments` AS select `ad`.`applicationID` AS `applicationID`,`d`.`documentID` AS `documentID`,`d`.`documentName` AS `documentName`,`d`.`documentServerPath` AS `documentServerPath` from (`documents` `d` join `applicationdocuments` `ad` on(`d`.`documentID` = `ad`.`documentID`)) */;
 
 /*View structure for view getpassportinfo */
 
 /*!50001 DROP TABLE IF EXISTS `getpassportinfo` */;
 /*!50001 DROP VIEW IF EXISTS `getpassportinfo` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`christian`@`localhost` SQL SECURITY DEFINER VIEW `getpassportinfo` AS select `ad`.`applicationID` AS `applicationID`,`ps`.`passportID` AS `passportID`,`ps`.`passportNumber` AS `passportNumber`,`ap`.`status` AS `status`,`a`.`firstName` AS `firstName`,`a`.`middleName` AS `middleName`,`a`.`lastName` AS `lastName`,`a`.`dateOfBirth` AS `dateOfBirth`,`a`.`gender` AS `gender`,`n`.`nationality` AS `nationality` from ((((`passportdetails` `ps` join `applicationdocuments` `ad` on(`ps`.`passportID` = `ad`.`passportID`)) join `application` `ap` on(`ap`.`applicationID` = `ad`.`applicationID`)) join `applicant` `a` on(`a`.`applicantID` = `ap`.`applicantID`)) join `nationality` `n` on(`a`.`nID` = `n`.`nID`)) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `getpassportinfo` AS select `ad`.`applicationID` AS `applicationID`,`ps`.`passportID` AS `passportID`,`ps`.`passportNumber` AS `passportNumber`,`ap`.`status` AS `status`,`a`.`firstName` AS `firstName`,`a`.`middleName` AS `middleName`,`a`.`lastName` AS `lastName`,`a`.`dateOfBirth` AS `dateOfBirth`,`a`.`gender` AS `gender`,`n`.`nationality` AS `nationality` from ((((`passportdetails` `ps` join `applicationdocuments` `ad` on(`ps`.`passportID` = `ad`.`passportID`)) join `application` `ap` on(`ap`.`applicationID` = `ad`.`applicationID`)) join `applicant` `a` on(`a`.`applicantID` = `ap`.`applicantID`)) join `nationality` `n` on(`a`.`nID` = `n`.`nID`)) */;
 
 /*View structure for view getpassportlist */
 
 /*!50001 DROP TABLE IF EXISTS `getpassportlist` */;
 /*!50001 DROP VIEW IF EXISTS `getpassportlist` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`christian`@`localhost` SQL SECURITY DEFINER VIEW `getpassportlist` AS select `ad`.`applicationID` AS `applicationID`,`ad`.`documentID` AS `documentID`,`ps`.`passportID` AS `passportID`,`ps`.`passportNumber` AS `passportNumber`,`ap`.`status` AS `status` from ((`passportdetails` `ps` join `applicationdocuments` `ad` on(`ps`.`passportID` = `ad`.`passportID`)) join `application` `ap` on(`ap`.`applicationID` = `ad`.`applicationID`)) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `getpassportlist` AS select `ad`.`applicationID` AS `applicationID`,`ad`.`documentID` AS `documentID`,`ps`.`passportID` AS `passportID`,`ps`.`passportNumber` AS `passportNumber`,`ap`.`status` AS `status` from ((`passportdetails` `ps` join `applicationdocuments` `ad` on(`ps`.`passportID` = `ad`.`passportID`)) join `application` `ap` on(`ap`.`applicationID` = `ad`.`applicationID`)) */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

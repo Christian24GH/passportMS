@@ -25,7 +25,7 @@
         public $nationality;
         public $documentList = array();
     }
-    if($result->num_rows > 0){
+    if($result !== false && $result->num_rows > 0){
         $data = new format();
         while($row = $result->fetch_assoc()){
             $data->applicationID = $row["applicationID"];

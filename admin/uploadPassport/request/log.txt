@@ -102,3 +102,39 @@ Array
         )
 
 )
+Array
+(
+    [Input_file_passport] => Array
+        (
+            [name] => Visa-Page-8.drawio.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php638D.tmp
+            [error] => 0
+            [size] => 694276
+        )
+
+)
+Array
+(
+    [Input_file_passport] => Array
+        (
+            [name] => Visa-Page-8.drawio.png
+            [type] => image/png
+            [tmp_name] => C:\xampp\tmp\php761C.tmp
+            [error] => 0
+            [size] => 694276
+        )
+
+)
+Array
+(
+    [Input_file_passport] => Array
+        (
+            [name] => 728f3ae1f09cc4324d8bb08041db5a46.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php4939.tmp
+            [error] => 0
+            [size] => 84657
+        )
+
+)

@@ -7,7 +7,7 @@
      
     $result = $conn->query("SELECT nID, nationality from nationality");
     
-    if($result->num_rows > 0){
+    if($result !== false && $result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $response += [$row["nID"] => $row["nationality"]];
         }

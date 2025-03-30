@@ -151,3 +151,54 @@ Array
     [phone] => asd
     [gender] => male
 )
+Array
+(
+    [passport_type] => P
+    [country_code] => 3
+    [passport_number] => ASASDSD
+    [issued_date] => 2025-03-30
+    [expiry_date] => 2025-03-30
+    [lname] => Paracale
+    [fname] => Adriane
+    [mname] => A
+    [nationality] => 5
+    [dateofbirth] => 2025-03-30
+    [address] => ASDSD
+    [email] => ADSASA
+    [phone] => ASSADSAD
+    [gender] => male
+)
+Array
+(
+    [passport_type] => P
+    [country_code] => 3
+    [passport_number] => ASASDSD
+    [issued_date] => 2025-03-30
+    [expiry_date] => 2025-03-30
+    [lname] => Paracale
+    [fname] => Adriane
+    [mname] => A
+    [nationality] => 5
+    [dateofbirth] => 2025-03-30
+    [address] => ASDSD
+    [email] => ADSASA
+    [phone] => ASSADSAD
+    [gender] => male
+)
+Array
+(
+    [passport_type] => P
+    [country_code] => 1
+    [passport_number] => sadasd
+    [issued_date] => 2025-03-30
+    [expiry_date] => 2025-03-30
+    [lname] => sadsd
+    [fname] => asdad
+    [mname] => asdas
+    [nationality] => 1
+    [dateofbirth] => 2025-03-30
+    [address] => asd
+    [email] => sad
+    [phone] => asd
+    [gender] => male
+)

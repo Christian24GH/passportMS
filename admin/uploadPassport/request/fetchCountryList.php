@@ -7,7 +7,7 @@
     
     $result = $conn->query("SELECT countryID, country_code from issuing_country");
 
-    if($result->num_rows > 0){
+    if($result !== false && $result->num_rows > 0){
         while($row = $result->fetch_assoc()) {
             $response += [$row["countryID"] => $row["country_code"]];
         }

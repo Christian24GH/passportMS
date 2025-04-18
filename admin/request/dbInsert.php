@@ -2,7 +2,7 @@
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    $root = $_SERVER["DOCUMENT_ROOT"] . '/TourAndTravel/PPVS';
+    $root = $_SERVER["DOCUMENT_ROOT"] . '/dashboard/TourAndTravel/PPVS';
     include $root.'/client/connection.php';
 
     $jsonData = file_get_contents("php://input");

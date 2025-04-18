@@ -4,7 +4,7 @@ const approveModal = new bootstrap.Modal(document.getElementById('approveModal')
 const applicationIDEL = document.getElementById("applicationID");
 
 document.getElementById("submitRejection").addEventListener("click", async()=>{
-    const rejectApplicantFile = `${window.location.origin}/TourAndTravel/PPVS/admin/passportInfo/request/rejectApplicant.php`;
+    const rejectApplicantFile = `${window.location.origin}/dashboard/TourAndTravel/PPVS/admin/passportInfo/request/rejectApplicant.php`;
     const rejectionLetter = document.getElementById("rejectionLetter");
 
     const Rejection = {
@@ -26,7 +26,7 @@ document.getElementById("submitRejection").addEventListener("click", async()=>{
 
 document.getElementById("submitApproval").addEventListener("click", async()=>{
     
-    const approvalFile = `${window.location.origin}/TourAndTravel/PPVS/admin/passportInfo/request/approveApplicant.php`;
+    const approvalFile = `${window.location.origin}/dashboard/TourAndTravel/PPVS/admin/passportInfo/request/approveApplicant.php`;
     const Approval = {
         applicationID: applicationIDEL.innerText
     }

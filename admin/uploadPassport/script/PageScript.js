@@ -78,7 +78,7 @@ function onLastPage(){
     okayBtn.style.display = "block";
 }
 function onOkay(){
-    window.location.href = `${window.location.origin}/TourAndTravel/PPVS/admin/dashboard/index.php `;
+    window.location.href = `${window.location.origin}/dashboard/TourAndTravel/PPVS/admin/dashboard/index.php `;
 }
 async function onSubmit(){
     let result = await validateForm(form);

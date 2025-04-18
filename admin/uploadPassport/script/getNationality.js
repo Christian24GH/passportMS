@@ -1,7 +1,7 @@
 import { autocomplete, appendListOptions } from "./Form.module.js";
 import { fetchData, createMap } from "./Request.module.js";
 const baseUrl = window.location.origin
-const nFile = `${baseUrl}/TourAndTravel/PPVS/admin/uploadPassport/request/fetchNationality.php`
+const nFile = `${baseUrl}/dashboard/TourAndTravel/PPVS/admin/uploadPassport/request/fetchNationality.php`
 const nEl = document.getElementById("nationality");
 const listContainer_nationality = document.getElementById("listContainer_nationality");
 

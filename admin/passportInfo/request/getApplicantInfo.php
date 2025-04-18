@@ -1,6 +1,6 @@
 <?php
     function getApplicantInfo(){
-        $local_url = $_SERVER["DOCUMENT_ROOT"]."/TourAndTravel/PPVS";
+        $local_url = $_SERVER["DOCUMENT_ROOT"]."/dashboard/TourAndTravel/PPVS";
         include "$local_url/admin/connection.php";
 
         $sql = "SELECT * FROM getapplicants";

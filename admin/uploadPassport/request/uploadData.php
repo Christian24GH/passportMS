@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    $root = $_SERVER["DOCUMENT_ROOT"] . '/TourAndTravel/PPVS';
+    $root = $_SERVER["DOCUMENT_ROOT"] . '/dashboard/TourAndTravel/PPVS';
     $connectionPath = realpath($root . '/admin/connection.php');
 
     if (!$connectionPath || !file_exists($connectionPath)) {

@@ -11,7 +11,7 @@ const emailEl = document.getElementById("email");
 const document_sectionEl = document.getElementById("document_section");
 
 async function getPassInfo(dataValue, callback){
-    const file = `${window.location.origin}/TourAndTravel/PPVS/admin/passportInfo/request/getInfoTabData.php`;
+    const file = `${window.location.origin}/dashboard/TourAndTravel/PPVS/admin/passportInfo/request/getInfoTabData.php`;
     const data = await postData(dataValue, file);
     callback(data);
 }
@@ -33,7 +33,7 @@ document.getElementById("passportList").addEventListener("click",(e)=>{
     }
 })
 document.getElementById("document_section").addEventListener("click", (e)=>{
-    const serverDocumentPath  = `${location.origin}/TourAndTravel/PPVS/server/documents`;
+    const serverDocumentPath  = `${location.origin}/dashboard/TourAndTravel/PPVS/server/documents`;
     if(e.target.tagName === "A"){
         window.open(`${serverDocumentPath}/${e.target.dataset.loc}`);
     }

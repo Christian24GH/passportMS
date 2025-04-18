@@ -1,5 +1,5 @@
 <?php
-    $local_url = $_SERVER["DOCUMENT_ROOT"]."/TourAndTravel/PPVS";
+    $local_url = $_SERVER["DOCUMENT_ROOT"]."/dashboard/TourAndTravel/PPVS";
     include "$local_url/admin/connection.php";
     header('Content-Type: application/json');
     $decodedData = json_decode(file_get_contents("php://input"), true);

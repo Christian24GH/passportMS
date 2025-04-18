@@ -1,5 +1,5 @@
 import { Toast } from "./Form.module.js";
-const file = `${window.location.origin}/TourAndTravel/PPVS/admin/uploadPassport/request/uploadData.php`;
+const file = `${window.location.origin}/dashboard/TourAndTravel/PPVS/admin/uploadPassport/request/uploadData.php`;
 
 async function submitForm(data) {
     const formData = new FormData();

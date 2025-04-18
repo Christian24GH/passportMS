@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    $local_url = $_SERVER["DOCUMENT_ROOT"]."/TourAndTravel/PPVS";
+    $local_url = $_SERVER["DOCUMENT_ROOT"]."/dashboard/TourAndTravel/PPVS";
     $connectionPath = realpath("$local_url/admin/connection.php");
     if (!$connectionPath || !file_exists($connectionPath)) {
         echo json_encode(["status" => "Error", "message" => "Invalid include path"]);

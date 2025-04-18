@@ -1,5 +1,5 @@
 <?php
-    $root = $_SERVER["DOCUMENT_ROOT"] . '/TourAndTravel/PPVS';
+    $root = $_SERVER["DOCUMENT_ROOT"] . '/dashboard/TourAndTravel/PPVS';
     include $root.'/admin/connection.php';
 
     $jsonData = file_get_contents("php://input");

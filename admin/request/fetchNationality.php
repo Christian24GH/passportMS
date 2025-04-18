@@ -1,5 +1,5 @@
 <?php
-    $root = $_SERVER["DOCUMENT_ROOT"] . '/TourAndTravel/PPVS';
+    $root = $_SERVER["DOCUMENT_ROOT"] . '/dashboard/TourAndTravel/PPVS';
     include $root.'/client/connection.php';
  
     header("Content-Type: application/json");
